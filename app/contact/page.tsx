@@ -1,17 +1,33 @@
 "use client";
 
 import { useState, ChangeEvent, FormEvent } from "react";
+
 import {
   Mail,
   Phone,
   MapPin,
   Send,
+  Clock,
+  Briefcase,
+  CheckCircle,
+  MessageCircle,
+  ArrowRight,
+  Sparkles,
   Globe,
 } from "lucide-react";
 
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaFacebook,
+  FaTwitter,
+} from "react-icons/fa";
 type ContactForm = {
   name: string;
   email: string;
+  phone: string;
+  company: string;
   subject: string;
   message: string;
 };
@@ -20,6 +36,8 @@ export default function ContactPage() {
   const [formData, setFormData] = useState<ContactForm>({
     name: "",
     email: "",
+    phone: "",
+    company: "",
     subject: "",
     message: "",
   });
@@ -42,15 +60,19 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      await new Promise((resolve) => setTimeout(resolve, 1800));
 
       console.log(formData);
 
-      setSuccess("Your message has been sent successfully.");
+      setSuccess(
+        "Thank you! Your message has been sent successfully. I'll get back to you as soon as possible."
+      );
 
       setFormData({
         name: "",
         email: "",
+        phone: "",
+        company: "",
         subject: "",
         message: "",
       });
@@ -64,24 +86,65 @@ export default function ContactPage() {
 
       {/* Hero */}
 
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-24">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white py-28">
 
-          <h1 className="text-5xl font-bold mb-6">
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
+
+          <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 mb-8">
+            <Sparkles size={18} />
+            Let's Build Something Amazing
+          </span>
+
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-8">
             Contact Me
           </h1>
 
-          <p className="text-xl max-w-2xl mx-auto">
-            Interested in working together or have any questions?
-            Feel free to reach out.
+          <p className="text-xl max-w-3xl mx-auto text-blue-100 leading-9">
+            Whether you have a project, job opportunity, freelance work,
+            collaboration idea, or simply want to say hello,
+            I'd love to connect with you.
           </p>
 
+          <div className="mt-12 flex flex-wrap justify-center gap-5">
+
+            <div className="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4">
+              <h4 className="font-semibold">
+                24 Hours
+              </h4>
+              <p className="text-sm text-blue-100">
+                Average Response Time
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4">
+              <h4 className="font-semibold">
+                Remote Friendly
+              </h4>
+              <p className="text-sm text-blue-100">
+                Available Worldwide
+              </p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-xl px-6 py-4">
+              <h4 className="font-semibold">
+                Open to Work
+              </h4>
+              <p className="text-sm text-blue-100">
+                DevOps & QA Roles
+              </p>
+            </div>
+
+          </div>
+
         </div>
+
       </section>
 
       {/* Contact */}
 
-      <section className="py-20">
+      <section className="py-24">
 
         <div className="max-w-7xl mx-auto px-6">
 
@@ -91,32 +154,36 @@ export default function ContactPage() {
 
             <div>
 
-              <h2 className="text-3xl font-bold mb-8">
+              <h2 className="text-4xl font-bold mb-6">
                 Get In Touch
               </h2>
 
-              <p className="text-gray-600 mb-10 leading-8">
-                I'm currently looking for opportunities as a
-                DevOps Engineer and Automation Test Engineer.
-                If you have an exciting opportunity or project,
-                I'd love to hear from you.
+              <p className="text-gray-600 leading-8 mb-10">
+                I'm actively looking for full-time opportunities,
+                freelance projects, DevOps engineering roles,
+                automation testing positions, and cloud-based
+                application development work.
               </p>
 
-              <div className="space-y-8">
+              {/* Contact Cards */}
 
-                <div className="flex items-center gap-5">
+              <div className="space-y-6">
 
-                  <Mail className="text-blue-600" size={30} />
+                <div className="flex items-center gap-5 bg-white shadow rounded-2xl p-6">
+
+                  <div className="bg-blue-100 p-4 rounded-xl">
+                    <Mail className="text-blue-600" size={28} />
+                  </div>
 
                   <div>
 
-                    <h4 className="font-semibold">
-                      Email
+                    <h4 className="font-semibold text-lg">
+                      Email Address
                     </h4>
 
                     <a
                       href="mailto:abhishekkumardipu@gmail.com"
-                      className="text-gray-600 hover:text-blue-600"
+                      className="text-gray-600 hover:text-blue-600 transition"
                     >
                       abhishekkumardipu@gmail.com
                     </a>
@@ -125,19 +192,21 @@ export default function ContactPage() {
 
                 </div>
 
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-5 bg-white shadow rounded-2xl p-6">
 
-                  <Phone className="text-green-600" size={30} />
+                  <div className="bg-green-100 p-4 rounded-xl">
+                    <Phone className="text-green-600" size={28} />
+                  </div>
 
                   <div>
 
-                    <h4 className="font-semibold">
-                      Phone
+                    <h4 className="font-semibold text-lg">
+                      Phone Number
                     </h4>
 
                     <a
                       href="tel:+919142628227"
-                      className="text-gray-600 hover:text-green-600"
+                      className="text-gray-600 hover:text-green-600 transition"
                     >
                       +91 9142628227
                     </a>
@@ -146,16 +215,15 @@ export default function ContactPage() {
 
                 </div>
 
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-5 bg-white shadow rounded-2xl p-6">
 
-                  <MapPin
-                    className="text-red-500"
-                    size={30}
-                  />
+                  <div className="bg-red-100 p-4 rounded-xl">
+                    <MapPin className="text-red-500" size={28} />
+                  </div>
 
                   <div>
 
-                    <h4 className="font-semibold">
+                    <h4 className="font-semibold text-lg">
                       Location
                     </h4>
 
@@ -167,112 +235,271 @@ export default function ContactPage() {
 
                 </div>
 
-              </div>
+                <div className="flex items-center gap-5 bg-white shadow rounded-2xl p-6">
 
-              {/* Social */}
+                  <div className="bg-purple-100 p-4 rounded-xl">
+                    <Clock className="text-purple-600" size={28} />
+                  </div>
 
-              <div className="mt-12">
+                  <div>
 
-                <h3 className="text-xl font-semibold mb-5">
-                  Connect With Me
-                </h3>
+                    <h4 className="font-semibold text-lg">
+                      Working Hours
+                    </h4>
 
-                <div className="flex gap-5">
+                    <p className="text-gray-600">
+                      Monday - Saturday
+                    </p>
 
-                  <a
-                    href="#"
-                    className="p-4 rounded-full bg-white shadow hover:bg-indigo-700 hover:text-white transition"
-                  >
-                    <Globe />
-                  </a>
+                    <p className="text-gray-600">
+                      9:00 AM - 7:00 PM IST
+                    </p>
+
+                  </div>
+
+                </div>
+
+                <div className="flex items-center gap-5 bg-white shadow rounded-2xl p-6">
+
+                  <div className="bg-orange-100 p-4 rounded-xl">
+                    <Briefcase className="text-orange-600" size={28} />
+                  </div>
+
+                  <div>
+
+                    <h4 className="font-semibold text-lg">
+                      Available For
+                    </h4>
+
+                    <p className="text-gray-600">
+                      Full Time • Internship • Freelance • Remote
+                    </p>
+
+                  </div>
 
                 </div>
 
               </div>
 
-            </div>
+              {/* Why Hire */}
 
-            {/* Right */}
+              <div className="mt-14">
 
-            <div className="bg-white shadow-xl rounded-2xl p-10">
+                <h3 className="text-2xl font-bold mb-6">
+                  Why Work With Me?
+                </h3>
 
-              <h2 className="text-3xl font-bold mb-8">
-                Send Message
-              </h2>
+                <div className="space-y-5">
 
-              <form
-                onSubmit={handleSubmit}
-                className="space-y-6"
-              >
+                  <div className="flex gap-4">
 
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                />
+                    <CheckCircle className="text-green-600 mt-1" />
 
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                />
+                    <div>
 
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none"
-                />
+                      <h4 className="font-semibold">
+                        DevOps Engineer
+                      </h4>
 
-                <textarea
-                  rows={7}
-                  name="message"
-                  placeholder="Write your message..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full border rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
-                />
+                      <p className="text-gray-600">
+                        CI/CD, Docker, Kubernetes, Jenkins,
+                        AWS, Linux and Automation.
+                      </p>
 
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition flex justify-center items-center gap-3"
-                >
-                  {loading ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send size={20} />
-                      Send Message
-                    </>
-                  )}
-                </button>
+                    </div>
 
-                {success && (
-                  <div className="bg-green-100 text-green-700 rounded-lg p-4 mt-5">
-                    {success}
                   </div>
-                )}
 
-              </form>
+                  <div className="flex gap-4">
+
+                    <CheckCircle className="text-green-600 mt-1" />
+
+                    <div>
+
+                      <h4 className="font-semibold">
+                        Automation Testing
+                      </h4>
+
+                      <p className="text-gray-600">
+                        Selenium, Playwright,
+                        Java, API Testing and TestNG.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  <div className="flex gap-4">
+
+                    <CheckCircle className="text-green-600 mt-1" />
+
+                    <div>
+
+                      <h4 className="font-semibold">
+                        Full Stack Projects
+                      </h4>
+
+                      <p className="text-gray-600">
+                        Next.js, React, TypeScript,
+                        Tailwind CSS and Node.js.
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              {/* Social */}
+
+              <div className="mt-14">
+                <h3 className="text-2xl font-bold mb-6">
+                  Connect With Me
+                </h3>
+
+                <div className="flex flex-wrap gap-4">
+
+                  {[
+                    { Icon: Globe, href: "#" },
+                    { Icon: FaLinkedin, href: "#" },
+                    { Icon: FaGithub, href: "#" },
+                    { Icon: FaInstagram, href: "#" },
+                    { Icon: FaFacebook, href: "#" },
+                    { Icon: FaTwitter, href: "#" },
+                  ].map(({ Icon, href }, index) => (
+                    <a
+                      key={index}
+                      href={href}
+                      className="p-4 rounded-full bg-white shadow-lg hover:bg-blue-600 hover:text-white transition-all duration-300"
+                    >
+                      <Icon size={22} />
+                    </a>
+                  ))}
+
+                </div>
+              </div>
+              </div>
+
+              {/* Form */}
+
+              <div className="bg-white rounded-3xl shadow-2xl p-10">
+
+                <div className="flex items-center gap-3 mb-8">
+
+                  <MessageCircle
+                    className="text-blue-600"
+                    size={34}
+                  />
+
+                  <h2 className="text-3xl font-bold">
+                    Send Message
+                  </h2>
+
+                </div>
+
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                >
+
+                  <div className="grid md:grid-cols-2 gap-5">
+
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Your Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-5">
+
+                    <input
+                      type="text"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+
+                    <input
+                      type="text"
+                      name="company"
+                      placeholder="Company Name"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+
+                  </div>
+
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+
+                  <textarea
+                    rows={7}
+                    name="message"
+                    placeholder="Write your message..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full border rounded-xl px-5 py-4 outline-none resize-none focus:ring-2 focus:ring-blue-500"
+                  />
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl flex justify-center items-center gap-3 hover:opacity-90 transition"
+                  >
+                    {loading ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        <Send size={20} />
+                        Send Message
+                        <ArrowRight size={18} />
+                      </>
+                    )}
+                  </button>
+
+                  {success && (
+                    <div className="bg-green-100 border border-green-300 text-green-700 rounded-xl p-5 flex items-center gap-3">
+                      <CheckCircle size={22} />
+                      {success}
+                    </div>
+                  )}
+
+                </form>
+
+              </div>
 
             </div>
 
           </div>
-
-        </div>
 
       </section>
 
