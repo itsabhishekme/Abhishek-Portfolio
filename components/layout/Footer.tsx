@@ -226,18 +226,6 @@ export default function Footer() {
 
           </p>
 
-          <button
-            onClick={() =>
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              })
-            }
-            className="rounded-full bg-blue-600 p-4 text-white transition hover:bg-blue-700"
-          >
-            <FaArrowUp />
-          </button>
-
         </div>
 
       </div>
