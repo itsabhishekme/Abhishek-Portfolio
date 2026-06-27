@@ -9,12 +9,17 @@ import {
   FaHeart,
   FaDocker,
   FaAws,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaFileDownload,
 } from "react-icons/fa";
 import {
   SiKubernetes,
   SiTerraform,
   SiJenkins,
   SiCypress,
+  SiTypescript,
+  SiNextdotjs,
 } from "react-icons/si";
 
 export default function Footer() {
@@ -32,30 +37,14 @@ export default function Footer() {
   ];
 
   const technologies = [
-    {
-      icon: <FaDocker />,
-      name: "Docker",
-    },
-    {
-      icon: <SiKubernetes />,
-      name: "Kubernetes",
-    },
-    {
-      icon: <FaAws />,
-      name: "AWS",
-    },
-    {
-      icon: <SiTerraform />,
-      name: "Terraform",
-    },
-    {
-      icon: <SiJenkins />,
-      name: "Jenkins",
-    },
-    {
-      icon: <SiCypress />,
-      name: "Cypress",
-    },
+    { icon: <FaDocker />, name: "Docker" },
+    { icon: <SiKubernetes />, name: "Kubernetes" },
+    { icon: <FaAws />, name: "AWS" },
+    { icon: <SiTerraform />, name: "Terraform" },
+    { icon: <SiJenkins />, name: "Jenkins" },
+    { icon: <SiCypress />, name: "Cypress" },
+    { icon: <SiTypescript />, name: "TypeScript" },
+    { icon: <SiNextdotjs />, name: "Next.js" },
   ];
 
   const scrollToTop = () => {
@@ -66,10 +55,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 text-slate-300">
-      {/* Top Section */}
+    <footer className="relative overflow-hidden border-t border-slate-800 bg-slate-950 text-slate-300">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#2563eb15,transparent_35%),radial-gradient(circle_at_bottom_right,#06b6d415,transparent_35%)]" />
+
       <div className="container mx-auto px-6 py-16">
-        <div className="grid gap-12 lg:grid-cols-4">
+        <div className="grid gap-14 lg:grid-cols-4">
           {/* About */}
           <div>
             <h2 className="text-3xl font-bold text-white">
@@ -78,9 +68,10 @@ export default function Footer() {
 
             <p className="mt-6 leading-8 text-slate-400">
               Passionate QA Automation Engineer transitioning into DevOps.
-              I enjoy building scalable automation frameworks, cloud-native
-              applications, CI/CD pipelines and modern infrastructure using
-              Docker, Kubernetes, AWS and Terraform.
+              Experienced in AWS, Docker, Kubernetes, Terraform, Jenkins,
+              Cypress, Playwright, Linux and modern CI/CD practices.
+              I love building scalable cloud-native applications and
+              automation frameworks.
             </p>
 
             <div className="mt-8 flex gap-4">
@@ -111,18 +102,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Quick Links */}
           <div>
             <h3 className="mb-6 text-2xl font-semibold text-white">
               Quick Links
             </h3>
 
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {quickLinks.map((item) => (
                 <li key={item.title}>
                   <Link
                     href={item.href}
-                    className="transition duration-300 hover:pl-2 hover:text-blue-400"
+                    className="transition-all duration-300 hover:pl-2 hover:text-blue-400"
                   >
                     {item.title}
                   </Link>
@@ -131,18 +122,18 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Technologies */}
+          {/* Tech Stack */}
           <div>
             <h3 className="mb-6 text-2xl font-semibold text-white">
               Technologies
             </h3>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-4 gap-4">
               {technologies.map((tech) => (
                 <div
                   key={tech.name}
                   title={tech.name}
-                  className="flex h-16 w-16 items-center justify-center rounded-xl bg-slate-900 text-3xl text-blue-500 transition-all duration-300 hover:scale-110 hover:bg-blue-600 hover:text-white"
+                  className="flex h-16 w-16 items-center justify-center rounded-xl border border-slate-800 bg-slate-900 text-3xl text-blue-500 transition-all duration-300 hover:scale-110 hover:border-blue-500 hover:bg-blue-600 hover:text-white"
                 >
                   {tech.icon}
                 </div>
@@ -156,24 +147,35 @@ export default function Footer() {
               Contact
             </h3>
 
-            <div className="space-y-4 text-slate-400">
-              <p>📧 abhishekkumardipu@gmail.com</p>
-              <p>📱 +91 9142628227</p>
-              <p>📍 Bengaluru, Karnataka, India</p>
+            <div className="space-y-5 text-slate-400">
+              <p className="flex items-center gap-3">
+                <FaEnvelope className="text-blue-500" />
+                abhishekkumardipu@gmail.com
+              </p>
+
+              <p className="flex items-center gap-3">
+                <FaPhoneAlt className="text-blue-500" />
+                +91 9142628227
+              </p>
+
+              <p className="flex items-center gap-3">
+                <FaMapMarkerAlt className="text-blue-500" />
+                Bengaluru, Karnataka, India
+              </p>
             </div>
 
             <a
               href="/resume/Abhishek-Kumar-Resume.pdf"
               download
-              className="mt-8 inline-flex rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-700"
+              className="mt-8 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-700"
             >
+              <FaFileDownload />
               Download Resume
             </a>
           </div>
         </div>
       </div>
 
-      {/* Bottom */}
       <div className="border-t border-slate-800">
         <div className="container mx-auto flex flex-col items-center justify-between gap-6 px-6 py-6 md:flex-row">
           <p className="flex flex-wrap items-center justify-center gap-2 text-center text-slate-500">
@@ -183,16 +185,15 @@ export default function Footer() {
             </span>
             Made with
             <FaHeart className="text-red-500" />
-            using Next.js, TypeScript & Tailwind CSS
+            using
+            <span className="font-medium text-blue-400">
+              Next.js
+            </span>
+            &
+            <span className="font-medium text-cyan-400">
+              TypeScript
+            </span>
           </p>
-
-          <button
-            onClick={scrollToTop}
-            className="rounded-full bg-blue-600 p-3 text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700"
-            aria-label="Scroll to top"
-          >
-            <FaArrowUp />
-          </button>
         </div>
       </div>
     </footer>
