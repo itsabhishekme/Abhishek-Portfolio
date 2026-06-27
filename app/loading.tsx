@@ -217,18 +217,6 @@ export default function Loading() {
           DevOps • Cloud • Automation • AWS
         </p>
       </section>
-
-      {/* Custom Animation */}
-      <style jsx global>{`
-        @keyframes loading {
-          0% {
-            transform: translateX(-100%);
-          }
-          100% {
-            transform: translateX(300%);
-          }
-        }
-      `}</style>
     </main>
   );
 }
