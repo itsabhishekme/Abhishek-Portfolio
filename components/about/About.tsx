@@ -15,7 +15,6 @@ import {
   SiJenkins,
   SiTerraform,
   SiCypress,
-  SiPlaywright,
 } from "react-icons/si";
 
 const skills = [
@@ -200,8 +199,6 @@ export default function About() {
               <SiJenkins />
 
               <SiCypress />
-
-              <SiPlaywright />
 
             </div>
 

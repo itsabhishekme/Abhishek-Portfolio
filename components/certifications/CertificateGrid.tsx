@@ -13,7 +13,6 @@ import {
   SiTerraform,
   SiKubernetes,
   SiCypress,
-  SiPlaywright,
 } from "react-icons/si";
 
 export interface Certificate {
@@ -40,17 +39,6 @@ const certificates: Certificate[] = [
     image: "/images/certificates/cypress.png",
     icon: <SiCypress />,
     color: "from-green-500 to-emerald-600",
-  },
-  {
-    id: 2,
-    title: "Playwright Automation",
-    issuer: "Self Learning",
-    date: "2025",
-    description:
-      "Built scalable Playwright automation frameworks using JavaScript and TypeScript with API validations and reporting.",
-    image: "/images/certificates/playwright.png",
-    icon: <SiPlaywright />,
-    color: "from-blue-500 to-cyan-600",
   },
   {
     id: 3,
@@ -184,7 +172,6 @@ export default function CertificateGrid() {
                 delay: index * 0.08,
               }}
             >
-              <CertificateCard certificate={certificate} />
             </motion.div>
           ))}
         </div>

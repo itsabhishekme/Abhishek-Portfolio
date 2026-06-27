@@ -15,7 +15,6 @@ import {
   SiTerraform,
   SiJenkins,
   SiCypress,
-  SiPlaywright,
 } from "react-icons/si";
 
 export default function Footer() {
@@ -56,10 +55,6 @@ export default function Footer() {
     {
       icon: <SiCypress />,
       name: "Cypress",
-    },
-    {
-      icon: <SiPlaywright />,
-      name: "Playwright",
     },
   ];
 

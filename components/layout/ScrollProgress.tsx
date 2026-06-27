@@ -105,7 +105,6 @@ export default function ScrollProgress() {
               strokeWidth="4"
               fill="none"
             />
-
             <motion.circle
               cx="30"
               cy="30"
@@ -116,9 +115,6 @@ export default function ScrollProgress() {
               strokeLinecap="round"
               style={{
                 strokeDasharray: circumference,
-                strokeDashoffset: progress.to(
-                  (value) => circumference * (1 - value)
-                ),
               }}
             />
           </svg>
