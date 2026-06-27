@@ -1,0 +1,439 @@
+/* ===============================
+   Fade Animations
+================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+/* ===============================
+   Slide Animations
+================================== */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.8s ease forwards;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-right {
+  animation: slideRight 0.8s ease forwards;
+}
+
+/* ===============================
+   Zoom
+================================== */
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-zoom-in {
+  animation: zoomIn .7s ease forwards;
+}
+
+@keyframes zoomOut {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(.8);
+  }
+}
+
+.animate-zoom-out {
+  animation: zoomOut .4s ease forwards;
+}
+
+/* ===============================
+   Floating
+================================== */
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-floating {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* ===============================
+   Pulse
+================================== */
+
+@keyframes pulseSlow {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: .85;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s infinite;
+}
+
+/* ===============================
+   Bounce
+================================== */
+
+@keyframes bounceSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2.5s infinite;
+}
+
+/* ===============================
+   Rotate
+================================== */
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate360 12s linear infinite;
+}
+
+/* ===============================
+   Gradient Animation
+================================== */
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+/* ===============================
+   Shine Effect
+================================== */
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+.animate-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shine::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: -100%;
+
+  width: 40%;
+
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  transform: skewX(-25deg);
+
+  animation: shine 2.5s infinite;
+}
+
+/* ===============================
+   Typing Cursor
+================================== */
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-cursor {
+  animation: blink .8s infinite;
+}
+
+/* ===============================
+   Scale Hover
+================================== */
+
+.hover-scale {
+  transition: .3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   Rotate Hover
+================================== */
+
+.hover-rotate {
+  transition: .3s ease;
+}
+
+.hover-rotate:hover {
+  transform: rotate(6deg);
+}
+
+/* ===============================
+   Lift Hover
+================================== */
+
+.hover-lift {
+  transition: .35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+}
+
+/* ===============================
+   Glow Hover
+================================== */
+
+.hover-glow {
+  transition: .35s ease;
+}
+
+.hover-glow:hover {
+  box-shadow:
+    0 0 15px #2563eb,
+    0 0 30px #2563eb55,
+    0 0 45px #2563eb33;
+}
+
+/* ===============================
+   Glass Effect
+================================== */
+
+.glass {
+  background: rgba(255, 255, 255, .05);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, .08);
+}
+
+/* ===============================
+   Gradient Text
+================================== */
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #06b6d4,
+    #38bdf8
+  );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+/* ===============================
+   Smooth Appear Delay Classes
+================================== */
+
+.delay-100 {
+  animation-delay: .1s;
+}
+
+.delay-200 {
+  animation-delay: .2s;
+}
+
+.delay-300 {
+  animation-delay: .3s;
+}
+
+.delay-500 {
+  animation-delay: .5s;
+}
+
+.delay-700 {
+  animation-delay: .7s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* ===============================
+   Infinite Marquee
+================================== */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* ===============================
+   Scroll Progress
+================================== */
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 1s linear forwards;
+}
