@@ -27,29 +27,16 @@ export default function Hero() {
       className="relative flex min-h-screen items-center overflow-hidden bg-slate-950"
     >
       {/* Background */}
-
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,#2563eb22,transparent_40%),radial-gradient(circle_at_bottom_left,#06b6d422,transparent_35%)]" />
-
       <div className="absolute inset-0 -z-10 bg-grid opacity-10" />
 
       <div className="container mx-auto px-6 py-20">
-
         <div className="grid items-center gap-20 lg:grid-cols-2">
-
-          {/* Left */}
-
+          {/* Left Content */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -50,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
           >
             <span className="rounded-full border border-blue-500 bg-blue-500/10 px-5 py-2 text-sm font-semibold text-blue-400">
               👋 Welcome To My Portfolio
@@ -69,22 +56,19 @@ export default function Hero() {
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
               Passionate QA Automation Engineer transitioning into DevOps.
-              Experienced in Cypress, Playwright, API Testing, SQL,
-              AWS CI/CD, Docker, Kubernetes, Terraform and Linux.
-              I enjoy building scalable automation frameworks and
-              cloud-native solutions.
+              Experienced in Cypress, Playwright, API Testing, SQL, AWS CI/CD,
+              Docker, Kubernetes, Terraform and Linux. I enjoy building scalable
+              automation frameworks and cloud-native solutions with modern DevOps
+              practices and continuous integration pipelines.
             </p>
 
             {/* Buttons */}
-
             <div className="mt-10 flex flex-wrap gap-5">
-
               <Link
                 href="/projects"
                 className="flex items-center gap-3 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition hover:bg-blue-700"
               >
                 View Projects
-
                 <FaArrowRight />
               </Link>
 
@@ -94,20 +78,17 @@ export default function Hero() {
                 className="flex items-center gap-3 rounded-xl border border-slate-600 px-8 py-4 font-semibold text-white transition hover:border-blue-500 hover:bg-slate-900"
               >
                 <FaDownload />
-
                 Download Resume
               </a>
-
             </div>
 
-            {/* Social */}
-
+            {/* Social Links */}
             <div className="mt-12 flex gap-5">
-
               <a
                 href="https://github.com/"
                 target="_blank"
-                className="rounded-full bg-slate-800 p-4 text-2xl text-white transition hover:bg-blue-600"
+                rel="noopener noreferrer"
+                className="rounded-full bg-slate-800 p-4 text-2xl text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-600"
               >
                 <FaGithub />
               </a>
@@ -115,93 +96,67 @@ export default function Hero() {
               <a
                 href="https://linkedin.com/"
                 target="_blank"
-                className="rounded-full bg-slate-800 p-4 text-2xl text-white transition hover:bg-blue-600"
+                rel="noopener noreferrer"
+                className="rounded-full bg-slate-800 p-4 text-2xl text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-600"
               >
                 <FaLinkedin />
               </a>
 
               <a
                 href="mailto:abhishekkumardipu@gmail.com"
-                className="rounded-full bg-slate-800 p-4 text-2xl text-white transition hover:bg-blue-600"
+                className="rounded-full bg-slate-800 p-4 text-2xl text-white transition duration-300 hover:-translate-y-1 hover:bg-blue-600"
               >
                 <FaEnvelope />
               </a>
-
             </div>
 
             {/* Tech Stack */}
-
             <div className="mt-14">
-
               <p className="mb-5 text-sm uppercase tracking-widest text-slate-400">
                 Tech Stack
               </p>
 
               <div className="flex flex-wrap gap-6 text-5xl text-blue-500">
-
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                >
+                <motion.div whileHover={{ scale: 1.2, rotate: 8 }}>
                   <FaDocker />
                 </motion.div>
 
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                >
+                <motion.div whileHover={{ scale: 1.2, rotate: -8 }}>
                   <SiKubernetes />
                 </motion.div>
 
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                >
+                <motion.div whileHover={{ scale: 1.2, rotate: 8 }}>
                   <FaAws />
                 </motion.div>
 
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                >
+                <motion.div whileHover={{ scale: 1.2, rotate: -8 }}>
                   <SiTerraform />
                 </motion.div>
 
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                >
+                <motion.div whileHover={{ scale: 1.2, rotate: 8 }}>
                   <SiJenkins />
                 </motion.div>
-
               </div>
-
             </div>
-
           </motion.div>
 
-          {/* Right */}
-
+          {/* Right Content */}
           <motion.div
-            initial={{
-              opacity: 0,
-              x: 60,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             className="relative flex justify-center"
           >
             {/* Glow */}
-
             <div className="absolute h-[430px] w-[430px] rounded-full bg-blue-600/20 blur-3xl" />
 
+            {/* Profile Image */}
             <motion.div
-              animate={{
-                y: [0, -20, 0],
-              }}
+              animate={{ y: [0, -20, 0] }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
+                ease: "easeInOut",
               }}
               className="relative"
             >
@@ -215,15 +170,13 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* Floating Card */}
-
+            {/* Experience Card */}
             <motion.div
-              animate={{
-                y: [0, -10, 0],
-              }}
+              animate={{ y: [0, -10, 0] }}
               transition={{
-                repeat: Infinity,
                 duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
               }}
               className="absolute bottom-8 left-0 rounded-2xl border border-slate-700 bg-slate-900/90 p-5 backdrop-blur"
             >
@@ -236,13 +189,13 @@ export default function Hero() {
               </p>
             </motion.div>
 
+            {/* Goal Card */}
             <motion.div
-              animate={{
-                y: [0, 12, 0],
-              }}
+              animate={{ y: [0, 12, 0] }}
               transition={{
-                repeat: Infinity,
                 duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
               }}
               className="absolute right-0 top-12 rounded-2xl border border-slate-700 bg-slate-900/90 p-5 backdrop-blur"
             >
@@ -254,11 +207,8 @@ export default function Hero() {
                 DevOps Engineer
               </p>
             </motion.div>
-
           </motion.div>
-
         </div>
-
       </div>
     </section>
   );
