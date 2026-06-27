@@ -144,7 +144,6 @@ export default function RootLayout({
         className={`
           ${inter.variable}
           ${poppins.variable}
-          bg-white
           text-gray-900
           antialiased
           min-h-screen

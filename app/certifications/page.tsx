@@ -295,7 +295,6 @@ export default function CertificationsPage() {
             mt-10
             px-8
             py-4
-            bg-white
             text-blue-700
             rounded-xl
             font-bold
