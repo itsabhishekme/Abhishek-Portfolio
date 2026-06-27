@@ -23,6 +23,7 @@ import {
   FaFacebook,
   FaTwitter,
 } from "react-icons/fa";
+
 type ContactForm = {
   name: string;
   email: string;
