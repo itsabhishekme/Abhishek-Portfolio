@@ -17,10 +17,8 @@ import {
   SiTypescript,
   SiPostman,
   SiCypress,
-  SiPlaywright,
   SiTerraform,
   SiKubernetes,
-  SiJmeter,
   SiNextdotjs,
   SiMysql,
 } from "react-icons/si";
@@ -33,9 +31,7 @@ interface Skill {
 
 const automation: Skill[] = [
   { name: "Cypress", level: 95, icon: <SiCypress /> },
-  { name: "Playwright", level: 90, icon: <SiPlaywright /> },
   { name: "Postman API", level: 92, icon: <SiPostman /> },
-  { name: "JMeter", level: 85, icon: <SiJmeter /> },
   { name: "SQL", level: 90, icon: <SiMysql /> },
 ];
 
