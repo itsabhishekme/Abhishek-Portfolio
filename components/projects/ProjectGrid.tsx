@@ -160,7 +160,6 @@ export default function ProjectGrid() {
             >
               <ProjectCard
                 title={project.title}
-                subtitle={project.subtitle}
                 image={project.image}
                 description={project.description}
                 technologies={project.technologies}
