@@ -15,7 +15,6 @@ import {
   SiTerraform,
   SiJenkins,
   SiCypress,
-  SiPlaywright,
   SiPostman,
   SiJavascript,
   SiTypescript,
@@ -208,10 +207,6 @@ export const SKILLS = [
   {
     name: "Cypress",
     icon: SiCypress,
-  },
-  {
-    name: "Playwright",
-    icon: SiPlaywright,
   },
   {
     name: "Postman",
