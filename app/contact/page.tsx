@@ -6,8 +6,6 @@ import {
   Phone,
   MapPin,
   Send,
-  Github,
-  Linkedin,
   Globe,
 } from "lucide-react";
 
@@ -180,20 +178,6 @@ export default function ContactPage() {
                 </h3>
 
                 <div className="flex gap-5">
-
-                  <a
-                    href="#"
-                    className="p-4 rounded-full bg-white shadow hover:bg-blue-600 hover:text-white transition"
-                  >
-                    <Github />
-                  </a>
-
-                  <a
-                    href="#"
-                    className="p-4 rounded-full bg-white shadow hover:bg-blue-700 hover:text-white transition"
-                  >
-                    <Linkedin />
-                  </a>
 
                   <a
                     href="#"

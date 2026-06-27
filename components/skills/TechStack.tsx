@@ -25,7 +25,6 @@ import {
   SiJenkins,
   SiPostman,
   SiCypress,
-  SiPlaywright,
   SiMysql,
   SiMongodb,
   SiRedis,
@@ -84,7 +83,6 @@ const techStack = [
   {
     title: "Testing & Monitoring",
     technologies: [
-      { name: "Playwright", icon: <SiPlaywright /> },
       { name: "Cypress", icon: <SiCypress /> },
       { name: "Postman", icon: <SiPostman /> },
       { name: "Grafana", icon: <SiGrafana /> },

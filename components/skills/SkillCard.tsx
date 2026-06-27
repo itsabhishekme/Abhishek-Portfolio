@@ -16,7 +16,6 @@ import {
   SiJavascript,
   SiKubernetes,
   SiMysql,
-  SiPlaywright,
   SiPostman,
   SiTerraform,
   SiTypescript,
@@ -47,7 +46,6 @@ const iconMap: Record<string, React.ReactNode> = {
   mysql: <SiMysql />,
   postman: <SiPostman />,
   cypress: <SiCypress />,
-  playwright: <SiPlaywright />,
 };
 
 export default function SkillCard({

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  Github,
   ExternalLink,
   Code2,
   Database,
@@ -22,7 +21,7 @@ interface Project {
   technologies: string[];
   github: string;
   live: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
   highlights: string[];
 }
 
@@ -293,15 +292,6 @@ export default function ProjectsPage() {
                 </div>
 
                 <div className="mt-10 flex gap-4">
-
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    className="flex items-center gap-2 bg-white text-black px-6 py-3 rounded-xl font-semibold hover:scale-105 duration-300"
-                  >
-                    <Github size={18} />
-                    GitHub
-                  </a>
 
                   <a
                     href={project.live}

@@ -69,7 +69,7 @@ export default function Home() {
         id="experience"
         className="py-24 bg-slate-50 dark:bg-slate-900"
       >
-        <TimelineCard />
+        <TimelineCard year={""} title={""} company={""} location={""} description={""} />
       </section>
 
       {/* Projects */}

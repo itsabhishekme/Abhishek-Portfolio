@@ -15,7 +15,6 @@ import {
   SiJavascript,
   SiTypescript,
   SiMysql,
-  SiPlaywright,
 } from "react-icons/si";
 
 export default function AboutPage() {
@@ -63,10 +62,6 @@ export default function AboutPage() {
     {
       name: "Cypress",
       icon: <SiCypress className="text-green-500 text-3xl" />,
-    },
-    {
-      name: "Playwright",
-      icon: <SiPlaywright className="text-green-700 text-3xl" />,
     },
     {
       name: "Postman",

@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #030712;
@@ -6,15 +8,20 @@
   --gold: #f59e0b;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter);
+  min-height: 100vh;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-cinzel);
+  font-family: var(--font-poppins);
 }

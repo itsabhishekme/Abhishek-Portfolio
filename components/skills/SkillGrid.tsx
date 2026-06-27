@@ -17,7 +17,6 @@ import {
   SiJenkins,
   SiPostman,
   SiCypress,
-  SiPlaywright,
   SiJavascript,
   SiTypescript,
   SiMysql,
@@ -86,13 +85,6 @@ const skills: Skill[] = [
     level: 95,
     icon: <SiCypress />,
     color: "text-green-400",
-    category: "Automation",
-  },
-  {
-    title: "Playwright",
-    level: 90,
-    icon: <SiPlaywright />,
-    color: "text-lime-400",
     category: "Automation",
   },
   {
